@@ -74,13 +74,14 @@ types:
 - int
 - long
 
-- these are the same:
-decimal number `15`
-binary number: `0b1111`
-hexadecimal number: `0xf`
+these are the same:
+- decimal number `15`
+- binary number: `0b1111`
+- hexadecimal number: `0xf`
 
-- we can add underscore _ inside number:`int num = 1_000_000;`
-- we need to add 'L' at the end of long number, `long l = 900L;`
+we can add underscore _ inside number:`int num = 1_000_000;`
+
+we need to add 'L' at the end of long number, `long l = 900L;`
 
 ### Float Primitive Type
 types:
@@ -140,3 +141,105 @@ the scope of a variable starts from the declartion, ends at the close curly brac
 } // v scope ends
 
 ```
+
+## Integer Calculation
+
+### The result of integer division is also integer
+```java
+int p = 16 / 5; // p == 3
+int q = 16 % 5; // p == 6
+```
+
+### Overflow
+when a number increase beyond the maximum value of the data type, it will change to a wrong value. To solve this, we need to change `int` to `long`
+
+### bitwise operations
+
+- bitwise move left (*2) or move right (/2)
+```java
+int n = 6; // 0110
+int a = n << 1; // move left to 1100 == 12, new bits are 0
+int b = n >> 1; // move right to 0011 == 3, does not move sign bit (the hightest bit), new bits are 0
+int m = -6; // 1010
+int c = m >> 1; // move right to 1101 == -7, does not move the sign bit (the hightest bit), new bits are 1 
+int d = m >>> 1; // move right to 0101 == 5, move the sign bit (the hightest bit), new bits are 0
+```
+
+- bitwise AND, OR, NOT, XOR
+```java
+n = 0 & 1; // biwise AND
+n = 0 | 1; // bitwise OR
+n = ~ 0; // bitwise NOT
+n = 0 ^ 1; // bitwise XOR
+```
+
+### data type conversion
+
+- smaller type can be automatically convert to larger type
+
+```java 
+short s = 123;
+int x = s + 12345678;
+```
+
+- forced type conversion
+
+```java
+int n = 123;
+short s = (short) n;
+```
+
+## Float Calculation
+
+### Not accurate
+when compare two float number, should not use `f1==f2`, instead, we should check whether the difference is small enough `Math.abs(f1-f2) < 0.00001`
+
+## Overflow
+when float divided by 0, no error but return special value
+```java
+double d1 = 0.0 / 0; // NaN (Not a Number)
+double d2 = 1.0 / 0; // Infinity
+double d3 = -1.0 / 0; // -Infinity
+```
+
+## Type Conversion
+
+- convert `double` to `int`
+```java
+int n1 = (int) 12.7; // 12
+```
+- when integer calculate with float number, integer convert to float number automatically
+```java
+int n = 3;
+double d = 12.3 + n; // d == 15.3
+```
+
+## Boolean Calculation
+
+### compare operations
+```java
+a > b;
+a >= b;
+a < b;
+a <= b;
+a == b;
+a != b;
+```
+### logical operations
+```java
+a && b; // AND
+a || b; // OR
+!a; // NOT
+```
+- logical operations are short-circuited 
+- `true || (exp1)` will return `true` directly without calculating `exp1`
+- `false && (exp2)` will return `false` directly without calculating `exp2`
+
+### Ternary operator
+
+```java
+boolean b;
+int z = b ? x : y; // if b is true, return x, otherwise return y
+```
+
+## Char and String

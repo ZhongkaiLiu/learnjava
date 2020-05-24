@@ -116,7 +116,7 @@ public void shouldDrive() {
 new Car(10, 120);
 ```
 
-## variable declartion
+## variable declaration
 - declare the type of a variable
 
 ```java

@@ -109,7 +109,7 @@ char zhong = '中';
 
 ### Constant
 
-- adding `final` to variable when declartion makes a constant
+- adding `final` to variable when declaration makes a constant
 - value of constant cannot be changed after initialization
 - by convention, constant use all capital letters
 ```java
@@ -129,7 +129,7 @@ var sb = new StringBuilder();
 ```
 
 ### Variable Scope
-the scope of a variable starts from the declartion, ends at the close curly brace
+the scope of a variable starts from the declaration, ends at the close curly brace
 
 ```java
 
@@ -263,4 +263,33 @@ String s1 = "Hello, \"Kevin\"";
 ```java
 String s1 = null;
 String s2 = "";
+```
+
+## Array
+
+### declare an array
+```java
+int[] na = new int[]
+```
+
+- inital values are `0`, `0.0` or `false`
+
+- initialize array when declaration
+
+```java
+int[] na = new int[] {12, 3, 4, 5};
+
+// shorthand
+int[] na = {12, 3, 4, 5};
+```
+
+- an array variable itself is a reference varaible
+
+- an array object is immutable
+
+### object array
+
+- in the object array, the array store the reference of the object, not the objects
+```java
+String[] sa = {"Java", "Python", "C++"};
 ```

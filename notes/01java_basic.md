@@ -51,7 +51,7 @@ comment line 2
 
 two types of variable
 - primitive type
-- object type
+- reference type
 
 ### Primitive type
 
@@ -243,3 +243,24 @@ int z = b ? x : y; // if b is true, return x, otherwise return y
 ```
 
 ## Char and String
+
+### Char 
+- char use single quote
+- one char store one Unicode character
+
+### String
+- string use double quotes
+- escape "\"
+- String object is immutable
+
+```java
+String s1 = "Hello, \"Kevin\"";
+```
+
+### null
+- any reference variable can be `null`, which means it does NOT reference any object
+- `null` value is differenct from empty string `""`
+```java
+String s1 = null;
+String s2 = "";
+```
